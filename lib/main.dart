@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.deepPurple,
+          seedColor: const Color.fromARGB(255, 59, 8, 104),
           brightness: Brightness.dark,
         ),
         useMaterial3: true,
@@ -94,36 +94,14 @@ class _MyHomePageState extends State<MyHomePage> {
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
+        leading: Icon(Icons.star, color: Colors.black),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Container(
-          color: Colors.black38,
-          height: double.infinity,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                height: 100.0,
-                width: 100.0,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(25.0),
-                  color: Colors.red,
-                ),
-              ),
-              Container(
-                height: 100.0,
-                width: 100.0,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(25.0),
-                  color: Colors.red,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
+      body: Wrap(children: [
+        Text('sdhhsuichsdhhsuichsdhhsuichsdhhsuichsdhhsuichsdhhsuich'),
+        Text('sdhhsuich'),
+        Text('sdhhsuich'),
+        Text('sdhhsuich'),
+      ],),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
