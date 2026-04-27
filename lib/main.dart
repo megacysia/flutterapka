@@ -1,56 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapka/views/widget_tree.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
-String title = 'Flutter Map';
 
-//stateless
-//material app
-//scaffold
-
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.deepPurple,
+          seedColor: Colors.teal,
           brightness: Brightness.dark,
         ),
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text(title), 
-          centerTitle: true,
-        ),
-        bottomNavigationBar: NavigationBar(
-          destinations: [
-            NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
-            NavigationDestination(icon: Icon(Icons.person), label: 'Profile'),
-          ],
-          onDestinationSelected: (int value) {},
-          selectedIndex: 0,
-        ),
-      ),
+      home: WidgetTree(),
     );
-  }
-}
-
-class MyHomePageCysi extends StatefulWidget {
-  const MyHomePageCysi({super.key});
-
-  @override
-  State<MyHomePageCysi> createState() => _MyHomePageCysiState();
-}
-
-class _MyHomePageCysiState extends State<MyHomePageCysi> {
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
   }
 }
